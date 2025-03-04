@@ -118,34 +118,30 @@ public class Calculator {
                     double a = stack.pop();
 
                     switch (text) {
-                        case "+":
+                        case "+" ->
                             stack.push(a + b);
-                            break;
-                        case "-":
+                        case "-" ->
                             stack.push(a - b);
-                            break;
-                        case "*":
+                        case "*" ->
                             stack.push(a * b);
-                            break;
-                        case "/":
+                        case "/" -> {
                             if (b == 0) {
                                 System.out.println("0으로 나눌 수 없음");
                                 error = true;
                             } else {
                                 stack.push(a / b);
                             }
-                            break;
-                        case "%":
+                        }
+                        case "%" -> {
                             if (b == 0) {
                                 System.out.println("0으로 나머지를 구할 수 없음");
                                 error = true;
                             } else {
                                 stack.push(a % b);
                             }
-                            break;
-                        case "^":
+                        }
+                        case "^" ->
                             stack.push(Math.pow(a, b));
-                            break;
                     }
                 }
             }
