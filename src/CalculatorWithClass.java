@@ -149,37 +149,34 @@ public class CalculatorWithClass {
                 float a = stack.pop();
 
                 switch (text) {
-                    case "+":
+                    case "+" ->
                         stack.push(a + b);
-                        break;
-                    case "-":
+                    case "-" ->
                         stack.push(a - b);
-                        break;
-                    case "*":
+                    case "*" ->
                         stack.push(a * b);
-                        break;
-                    case "/":
+                    case "/" -> {
                         if (b == 0) {
                             System.out.println("0으로 나눌 수 없음");
                             error = true;
                         } else {
                             stack.push(a / b);
                         }
-                        break;
-                    case "%":
+                    }
+                    case "%" -> {
                         if (b == 0) {
                             System.out.println("0으로 나머지를 구할 수 없음");
                             error = true;
                         } else {
                             stack.push(a % b);
                         }
-                        break;
-                    case "^":
+                    }
+                    case "^" ->
                         stack.push((float) Math.pow(a, b));
-                        break;
-                    default:
+                    default -> {
                         System.out.println("알 수 없는 연산자: " + text);
                         error = true;
+                    }
                 }
             }
         }
